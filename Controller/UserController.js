@@ -1,4 +1,3 @@
-var express = require('express');
 const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
 const util = require('../modules/util');
