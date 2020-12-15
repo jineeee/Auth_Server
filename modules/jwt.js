@@ -17,7 +17,6 @@ module.exports = {
         };
         return result;
     },
-
     verify: async (token) => {
         let decoded;
         try {

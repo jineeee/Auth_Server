@@ -64,16 +64,25 @@ module.exports = {
             if (hashed !== userResult[0].hashed) {
                 return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.MISS_MATCH_PW));
             }
-            const {token, _} = await jwt.sign(userResult[0]);
+            const {token, refreshToken} = await jwt.sign(userResult[0]);
 
             // 성공
             return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.LOGIN_SUCCESS, {
-                accessToken: token
+                accessToken: token, 
+                refreshToken: refreshToken
             }));
 
         } catch (err) {
             return res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, err.message));
             throw err;
+        }
+    },
+    readUsers : async(req, res) => {
+        try{
+            const result = await userModel.readUsers();
+            return res.status(statusCode.OK).send(util.success(statusCode.OK, responseMessage.READ_SUCCESS, result));
+        }catch(err){
+            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, err.message));
         }
     }
 }

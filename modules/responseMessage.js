@@ -6,7 +6,6 @@ module.exports = {
     CREATE_USER_SUCCESS: "회원 가입 성공",
     DELETE_USER_SUCCESS: "회원 탈퇴 성공",
 
-
     // ID 중복 확인
     VALID_ID: "사용 가능한 아이디입니다.",
     DUPLICATE_ID: "이미 사용 중인 아이디입니다.",
@@ -25,10 +24,13 @@ module.exports = {
     AUTH_SUCCESS: '인증에 성공했습니다.',
     ISSUE_SUCCESS: '새로운 토큰이 생성되었습니다.',
 
+    // 조회 성공
+    READ_SUCCESS: "조회 성공",
+    READ_FAIL: "조회 실패",
+
+    // 이메일 인증
     SEND_EMAIL: "이메일 전송 성공",
     SEND_EMAIL_FAIL: "이메일 전송 실패",
-    DUPLICATED_EMAIL_FAIL: "중복된 email이 있습니다.",
-    EMAIL_CHECK_SUCCESS: "email 중복 검사 완료",
 
     DB_ERROR: 'DB 오류'
 };

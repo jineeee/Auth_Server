@@ -1,5 +1,3 @@
-const express = require('express');
-const router = express.Router();
 const nodemailer = require('nodemailer');
 const smtpPool = require('nodemailer-smtp-pool');
 const emailConfig = require('../config/emailConfig');
@@ -12,6 +10,7 @@ const util = require('../modules/util');
 const rand = Math.floor(Math.random() * 1000000)+100000;
 
 module.exports = {
+    // 인증 이메일 전송
     emailVerify : async(req, res) => {
         const from = 'AUTH_SERVER';
         const to = req.body.email;
