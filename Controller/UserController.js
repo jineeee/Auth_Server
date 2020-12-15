@@ -61,9 +61,6 @@ module.exports = {
             }
 
             const hashed = await crypto.encryptWithSalt(pw, userResult[0].salt);
-            console.log('hashed', hashed);
-            console.log('user hashed', userResult[0].hashed)
-
             if (hashed !== userResult[0].hashed) {
                 return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.MISS_MATCH_PW));
             }

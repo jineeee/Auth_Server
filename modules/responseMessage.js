@@ -25,5 +25,10 @@ module.exports = {
     AUTH_SUCCESS: '인증에 성공했습니다.',
     ISSUE_SUCCESS: '새로운 토큰이 생성되었습니다.',
 
+    SEND_EMAIL: "이메일 전송 성공",
+    SEND_EMAIL_FAIL: "이메일 전송 실패",
+    DUPLICATED_EMAIL_FAIL: "중복된 email이 있습니다.",
+    EMAIL_CHECK_SUCCESS: "email 중복 검사 완료",
+
     DB_ERROR: 'DB 오류'
 };
