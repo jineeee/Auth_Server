@@ -29,15 +29,5 @@ module.exports = {
             console.log('ID CHECK ERROR : ', err);
             throw err;
         }
-    },
-    readUsers : async() => {
-        const query = 'SELECT * FROM user';
-        try{
-            const result = await pool.queryParam(query);
-            return result
-        }catch(err){
-            console.log('READ USERS ERROR : ', err);
-            throw err;
-        }
     }
 }

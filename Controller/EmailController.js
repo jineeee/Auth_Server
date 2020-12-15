@@ -6,7 +6,7 @@ const responseMessage = require('../modules/responseMessage');
 const statusCode = require('../modules/statusCode');
 const util = require('../modules/util');
 
-//인증번호 값
+// 랜덤 생성된 인증번호 값
 const rand = Math.floor(Math.random() * 1000000)+100000;
 
 module.exports = {
