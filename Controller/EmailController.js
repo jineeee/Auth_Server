@@ -12,6 +12,10 @@ const rand = Math.floor(Math.random() * 1000000)+100000;
 module.exports = {
     // 인증 이메일 전송
     emailVerify : async(req, res) => {
+        if(!req.body.email.includes("smilegate")){
+            return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NOT_VALID_EMAIL));
+        }
+
         const from = 'AUTH_SERVER';
         const to = req.body.email;
         const subject = '관리자 인증 메일입니다';

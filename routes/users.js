@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/getUsers', checkToken, userController.readUsers);
 router.post('/signup', userController.signUp);
 router.post('/signin', userController.signIn);
 router.post('/emailVerify', checkToken, emailController.emailVerify);
