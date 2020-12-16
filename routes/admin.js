@@ -4,5 +4,6 @@ const adminController = require('../Controller/AdminController');
 const checkToken = require('../middelware/checkToken').checkToken;
 
 router.get('/', checkToken, adminController.readUsers);
+router.post('/update', checkToken, adminController.updateUserInfo);
 
 module.exports = router;
